@@ -10,6 +10,7 @@
 	<style type="text/css" media="screen">
 		p, table, hr, .box { margin-bottom:25px; }
 		.box p { margin-bottom:10px; }
+		code {font-weight: 600; background-color: #ccc; color: rgb(107, 9, 55)}
 	</style>
 </head>
 
@@ -94,23 +95,25 @@
 	} 
 </pre>
 		<p>for the burger bars colors</p>
-<pre>	#header .toggle-bar {
+<pre>	#header .toggle-bar::before,
+	#header .toggle-bar::after {
 		background-color: #someColor;
 	} 
 </pre>
 		<p>If you want to edit the color of the components when the overlay is opened you will do the following:</p>
 		<p>nav links</p>
-<pre>	#overlay.is-opened a {
+<pre>	#header.is-opened a {
 		color: #someColor;
 	} 
 </pre>
 		<p>bugger labels</p>
-<pre>	#overlay.is-opened .toggle span {
+<pre>	#header.is-opened .toggle span {
 		color: #someColor;
 	} 
 </pre>
 		<p>for the burger bars colors</p>
-<pre>	#overlay.is-opened .toggle-bar {
+<pre>	#header.is-opened .toggle-bar::before,
+	#header.is-opened .toggle-bar::after {
 		background-color: #someColor;
 	} 
 </pre>
@@ -122,10 +125,10 @@
 		<p>There are four skins in this themes. The skins classes change the color of the texts and toggle button. Below you can see each of them and how they work</p>
 
 		<ol>
-			<li>.header--black changes the color to black</li>
-			<li>.header--white changes the color to white</li>
-			<li>.header--white-black changes the color to white, when the overlay is closed, and black, when the overlay is opened</li>
-			<li>.header--black-white changes the color to black, when the overlay is closed, and white, when the overlay is opened</li>
+			<li><code>.header--black</code>  changes the color to black</li>
+			<li><code>.header--white</code> changes the color to white</li>
+			<li><code>.header--white-black</code> changes the color to white, when the overlay is closed, and black, when the overlay is opened</li>
+			<li><code>.header--black-white</code> changes the color to black, when the overlay is closed, and white, when the overlay is opened</li>
 		</ol>
 
 		<p>To apply the skin you need to place the skin class in the div component with a class named header. See an example below.</p>
