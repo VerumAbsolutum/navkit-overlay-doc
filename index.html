@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC 			//			//DTD HTML 4.			//EN" "http			//www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Navkit Overlay Menu&rdquo; Documentation by &ldquo;Vere Absolutum&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Navkit Overlay Menu&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 12/02/2021<br>
+					By: Vere Absolutum<br>
+					Email: <a href="mailto:sergiopile3@gmail.com">sergiopile3@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http			//themeforest.net/user/VereAbsolutum">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#scss">SCSS files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+
+		<p>Hi, once more, thank you so much for purchasing this product. 
+			In this page you can find how it works and the possibilities that the navkit overlay menu has.
+		</p>
+		<p>One thing you need to know is that you will receive all the animations present in the preview.
+			You can use the same settings for those animations or edit something to better adjust it to your project.
+		</p>
+		<p>All the default animations is placed inside the dist folder. There you can find 4 HTML files and 4 javascript files (excluding the anime.min.js file).
+			the custom javascript to create the background animation has the same name that of the HTML file and all HTML needs the anime.min.js file to work.
+		</p>
+		<p>Files names and relations:</p>
+		<ol>
+			<li>fire.html and fire.js</li>
+			<li>square.html and square.js</li>
+			<li>linear.html and linear.js</li>
+			<li>wave.html and wave.js</li>
+			<li>anime.min.js is related to all html files</li>
+		</ol>
+		<p>Finally, to use the Navkit Overlay Menu, you just need to copy the HTML structure to your project and also place the anime.min.js and related javascript file (in this order) inside your project folder.
+			After that, check if you create the <code>script</code> tag for each javascript file inside your <code>body</code> tag.  </p>
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>
+			This theme is a fixed layout with four components: toggle, logo, overlay and SVG background. 
+			All of the components within the header content area is nested within a div container with an class of "header__container. 
+			The general template structure is the same throughout the templates. Here is the general structure.
+		</p>
+		
+		<img src="assets/images/htmlstructure.png" width="100%" alt="HTML Structure" />
+		
+		<p>If you would like to edit the color, font, or style of any elements within the header you would do the following:</p>
+
+		<p>nav links</p>
+<pre>	#header a {
+		color: #someColor;
+	} 
+</pre>
+		<p>burger labels</p>
+<pre>	#header .toggle span {
+		color: #someColor;
+	} 
+</pre>
+		<p>for the burger bars colors</p>
+<pre>	#header .toggle-bar {
+		background-color: #someColor;
+	} 
+</pre>
+		<p>If you want to edit the color of the components when the overlay is opened you will do the following:</p>
+		<p>nav links</p>
+<pre>	#overlay.is-opened a {
+		color: #someColor;
+	} 
+</pre>
+		<p>bugger labels</p>
+<pre>	#overlay.is-opened .toggle span {
+		color: #someColor;
+	} 
+</pre>
+		<p>for the burger bars colors</p>
+<pre>	#overlay.is-opened .toggle-bar {
+		background-color: #someColor;
+	} 
+</pre>
+	
+		<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p> 
+
+		<p>There are four skins in this themes. The skins classes change the color of the texts and toggle button. Below you can see each of them and how they work</p>
+
+		<ol>
+			<li>.header--black changes the color to black</li>
+			<li>.header--white changes the color to white</li>
+			<li>.header--white-black changes the color to white, when the overlay is closed, and black, when the overlay is opened</li>
+			<li>.header--black-white changes the color to black, when the overlay is closed, and white, when the overlay is opened</li>
+		</ol>
+
+		<p>To apply the skin you need to place the skin class in the div component with a class named header. See an example below.</p>
+
+<pre>	&lt;div id="header" class="header header--black"&gt;
+		#headerContent
+	&lt;&#47;div&gt;
+</pre>
+
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>I'm using one CSS files in this theme with the name navkit.min.css.</p> 
+
+		<p>The file contains all of the specific stylings for the page. The file is separated into sections using:</p>  
+
+<pre>	/* === Header === */
+
+	some code
+
+	/* === Toggle === */
+	
+	some code
+	
+	/* === Logo === */
+	
+	some code
+	
+	/* === Overlay === */
+	
+	some code
+	
+	/* === Nav === */
+
+	some code
+
+	/* === SVG Bg === */
+	
+	some code
+	
+</pre>
+		
+		<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+
+
+		<hr>
+		
+		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>You will receive all the navkit overlay menu animations that appeared in the preview.
+			All of those animations will be placed inside the dist folder.
+			Inside of the dist folder you will find 4 html files and 4 javascript (excluding the anime.min.js file).
+		</p>
+		<p>This theme uses two Javascript files.</p>
+		
+		<ol>
+			<li>animeJS</li>
+			<li>My custom scripts</li>
+		</ol>
+		  
+		<ol>
+			<li>Anime.js (/ˈæn.ə.meɪ/) is a lightweight JavaScript animation library with a simple, yet powerful API.
+It works with CSS properties, SVG, DOM attributes and JavaScript Objects.</li>
+			<li>Most of the animation in this site is carried out from the customs scripts. There are a few settings worth looking over.</li>
+			<br>
+			<br>
+			<p>If you want to edit and change some of the animation's features you will do the following:</p>
+			
+			<p>Inside the javascript file you will use you can search for settings, in the 'section: IMPLEMENTATION', and you will find the following structure:</p>
+<pre>	
+	/** SVG animation settings */
+	var settings = {
+		// it inverses the animation direction if it is true [true/false]
+		inverse: false,
+		// it changes the orientation of the animation [h (horizontal)/ v (vertical)]
+		orientation: 'v',
+		// number of division the the wave will have to create the shapes [1...+]
+		crestNumber: 1,
+		// the max amplitude value for the wave in milliseconds [1...+]
+		maxAmplitude: 1100,
+		// duration of the animation without delays in milliseconds [1...+]
+		duration: 800,
+		// the function used to create the shapes [square, sin, random]
+		shapeFunction: sin,
+		// the svg path elements [array]
+		paths,
+		// the delay value of each wave (svg path) to be animated in milliseconds [1...+]
+		waveDelay: 100
+	}
+</pre>
+		<p>If you want to used the default settings seen in the preview, you will receive a javascript with the default settings for each of those animation that you can find inside the main zip file.</p>
+
+		</ol>
+		
+		<hr>
+		
+		<h3 id="scss"><strong>D) SCSS Files</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used SCSS to create the css style for this theme, and doing so the processes of customization becomes much easier.</p>
+
+		<p>If you want to know more about SCSS you can go to the following link <a href="https://sass-lang.com/documentation/syntax">here</a></p> 
+
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>Icons from <a href="https			//www.fontawesome.com">fontawesome</a></li>
+			<li>Fonts from <a href="https			//fonts.google.com">google fonts</a></li>
+			<li>animejs from <a href="https			//animejs.com">animeJS</a></li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Vere Absolutum</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
